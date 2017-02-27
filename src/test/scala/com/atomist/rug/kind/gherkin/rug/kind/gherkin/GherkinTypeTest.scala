@@ -1,6 +1,6 @@
 package com.atomist.rug.kind.gherkin.rug.kind.gherkin
 
-import com.atomist.rug.kind.gherkin.rug.runtime.rugdsl.DefaultEvaluator
+import com.atomist.rug.runtime.rugdsl.DefaultEvaluator
 import org.scalatest.{FlatSpec, Matchers}
 
 class GherkinTypeTest extends FlatSpec with Matchers {

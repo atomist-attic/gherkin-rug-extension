@@ -1,7 +1,7 @@
 package com.atomist.rug.kind.gherkin.rug.kind.gherkin
 
-import com.atomist.rug.kind.gherkin.rug.kind.core.{FileMutableView, ProjectMutableView}
-import com.atomist.rug.kind.gherkin.source.{SimpleFileBasedArtifactSource, StringFileArtifact}
+import com.atomist.rug.kind.core.{FileMutableView, ProjectMutableView}
+import com.atomist.source.{SimpleFileBasedArtifactSource, StringFileArtifact}
 import org.scalatest.{FlatSpec, Matchers}
 
 class GherkinMutableViewTest extends FlatSpec with Matchers {
@@ -41,5 +41,4 @@ object GherkinMutableViewTest {
   val pmv = new ProjectMutableView(artifactSource)
   val fmv = new FileMutableView(fileArtifact, pmv)
   val mv = new GherkinMutableView(fileArtifact, pmv, new Gherkin)
-
 }

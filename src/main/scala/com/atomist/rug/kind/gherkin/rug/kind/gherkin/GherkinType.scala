@@ -1,10 +1,10 @@
 package com.atomist.rug.kind.gherkin.rug.kind.gherkin
 
-import com.atomist.rug.kind.gherkin.rug.kind.core.{FileMutableView, ProjectMutableView}
-import com.atomist.rug.kind.gherkin.rug.kind.dynamic.ChildResolver
-import com.atomist.rug.kind.gherkin.rug.runtime.rugdsl.{DefaultEvaluator, Evaluator}
-import com.atomist.rug.kind.gherkin.rug.spi.{ReflectivelyTypedType, Type}
-import com.atomist.rug.kind.gherkin.tree.TreeNode
+import com.atomist.rug.kind.core.{FileMutableView, ProjectMutableView}
+import com.atomist.rug.kind.dynamic.ChildResolver
+import com.atomist.rug.runtime.rugdsl.{DefaultEvaluator, Evaluator}
+import com.atomist.rug.spi.{ReflectivelyTypedType, Type}
+import com.atomist.tree.TreeNode
 
 object GherkinType {
   val gherkinExt = ".feature"
@@ -21,7 +21,7 @@ class GherkinType(evaluator: Evaluator)
 
   override def description = "Rug language extension for Gherkin"
 
-  override def runtimeClass = classOf[GherkinMutableView]
+  override def runtimeClass:Class[GherkinMutableView] = classOf[GherkinMutableView]
 
   override def findAllIn(context: TreeNode): Option[Seq[TreeNode]] = context match {
       case pmv: ProjectMutableView =>

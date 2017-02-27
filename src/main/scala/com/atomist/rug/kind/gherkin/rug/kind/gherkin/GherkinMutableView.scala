@@ -1,8 +1,8 @@
 package com.atomist.rug.kind.gherkin.rug.kind.gherkin
 
-import com.atomist.rug.kind.gherkin.rug.kind.core.{LazyFileArtifactBackedMutableView, ProjectMutableView}
-import com.atomist.rug.kind.gherkin.rug.spi.{ExportFunction, ExportFunctionParameterDescription}
-import com.atomist.rug.kind.gherkin.source.FileArtifact
+import com.atomist.rug.kind.core.{LazyFileArtifactBackedMutableView, ProjectMutableView}
+import com.atomist.rug.spi.{ExportFunction, ExportFunctionParameterDescription}
+import com.atomist.source.FileArtifact
 
 object GherkinMutableView {
 
