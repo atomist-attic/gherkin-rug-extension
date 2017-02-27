@@ -10,7 +10,7 @@ class GherkinTypeTest extends FlatSpec with Matchers {
   val typo = new GherkinType(DefaultEvaluator)
 
   it should "be able to find the language in the project" in {
-    val mvs = typo.findAllIn(pmv) match {
+    val mvs = typo.findAllIn(projectMutableView) match {
       case Some(tns) => tns
       case _ => fail(s"failed to find any Gherkin in project")
     }
@@ -19,7 +19,7 @@ class GherkinTypeTest extends FlatSpec with Matchers {
   }
 
   it should "be able to find the language in the file" in {
-    val mvs = typo.findAllIn(fmv) match {
+    val mvs = typo.findAllIn(fileMutableView) match {
       case Some(tns) => tns
       case _ => fail(s"failed to extract Gherkin from file")
     }

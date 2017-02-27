@@ -8,12 +8,24 @@ class GherkinMutableViewTest extends FlatSpec with Matchers {
 
   import GherkinMutableViewTest._
 
-  it should "be able to get the contents of the file" in {
-    assert(mv.contents === fileContents)
+  it should "be able to get the name of the feature" in {
+    assert(gherkinMutableView.featureName == featureTitle)
   }
 
-  it should "be able to get the name of the feature from the file" in {
-    assert(mv.featureDefinition.feature.getName == featureTitle)
+  it should "be able to set the name of the feature" in {
+    val locaGherkinMutableView = new GherkinMutableView(fileArtifact, projectMutableView, new Gherkin)
+    val newFeatureName = "US political history"
+    locaGherkinMutableView.setFeatureName(newFeatureName)
+    assert(locaGherkinMutableView.dirty)
+    assert(locaGherkinMutableView.featureName == newFeatureName)
+  }
+
+  it should "be able to get the list of scenarios" in {
+    assert(gherkinMutableView.scenarioDefinitions.size() == 1)
+  }
+
+  it should "be able to get the contents of the file" in {
+    assert(gherkinMutableView.contents === fileContents)
   }
 
   it should "be able to set the contents of the file" in {
@@ -21,8 +33,8 @@ class GherkinMutableViewTest extends FlatSpec with Matchers {
       """This is the new content
         |for the thing we'd like to test.
         |""".stripMargin
-    mv.setContents(newContent)
-    assert(mv.contents === newContent)
+    gherkinMutableView.setContents(newContent)
+    assert(gherkinMutableView.contents === newContent)
   }
 }
 
@@ -49,7 +61,7 @@ Scenario: Australian politics, 1972-1991
   val fileName: String = "file" + gherkinExt
   val fileArtifact = StringFileArtifact(fileName, fileContents)
   val artifactSource = SimpleFileBasedArtifactSource(fileArtifact)
-  val pmv = new ProjectMutableView(artifactSource)
-  val fmv = new FileMutableView(fileArtifact, pmv)
-  val mv = new GherkinMutableView(fileArtifact, pmv, new Gherkin)
+  val projectMutableView = new ProjectMutableView(artifactSource)
+  val fileMutableView = new FileMutableView(fileArtifact, projectMutableView)
+  val gherkinMutableView = new GherkinMutableView(fileArtifact, projectMutableView, new Gherkin)
 }
