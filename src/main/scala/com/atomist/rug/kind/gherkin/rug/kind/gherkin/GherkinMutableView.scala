@@ -6,8 +6,6 @@ import com.atomist.source.FileArtifact
 
 object GherkinMutableView {
 
-  val useful: String = "not really useful"
-
 }
 
 class GherkinMutableView(
@@ -16,8 +14,6 @@ class GherkinMutableView(
                                     gherkin: Gherkin
                                   )
   extends LazyFileArtifactBackedMutableView(originalBackingObject, parent) {
-
-  import GherkinMutableView._
 
   override def nodeName = "Gherkin"
 
@@ -28,15 +24,11 @@ class GherkinMutableView(
 
   override protected def currentContent: String = _currentContent
 
-  @ExportFunction(readOnly = true, description = "Returns something useful")
-  def somethingUseful: String = useful
-
-  @ExportFunction(readOnly = true, description = "Returns something useful")
+  @ExportFunction(readOnly = true, description = "Returns the contents of the Gherkin file")
   def contents: String = currentContent
 
   @ExportFunction(readOnly = false, description = "Set contents of Gherkin file to `content`")
   def setContents(
                    @ExportFunctionParameterDescription(name = "content", description = "New contents for file") content: String
                  ): Unit = _currentContent = content
-
 }

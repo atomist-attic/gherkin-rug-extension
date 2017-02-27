@@ -8,11 +8,6 @@ class GherkinMutableViewTest extends FlatSpec with Matchers {
 
   import GherkinMutableViewTest._
 
-  it should "be able to get something interesting" in {
-    import GherkinMutableView._
-    assert(mv.somethingUseful === useful)
-  }
-
   it should "be able to get the contents of the file" in {
     assert(mv.contents === fileContents)
   }
