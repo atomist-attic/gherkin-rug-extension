@@ -1,0 +1,21 @@
+---
+kind: "operation"
+client: "atomist 1.2"
+generator:
+  name: "NewRugLanguageExtensionProject"
+  group: "atomist-rugs"
+  artifact: "rug-language-extension"
+  version: "0.1.0"
+  origin:
+    repo: "https://github.com/atomist-rugs/rug-language-extension.git"
+    branch: "1dadd03f7bbf7c7318d67be5d77b489a86fd9cd0"
+    sha: "1dadd03"
+  parameters:
+    - "project_name": "gherkin-rug-extension"
+    - "extension_name": "Gherkin"
+    - "description": "Rug Language Extension for Gherkin files"
+    - "extension_file_ext": ".feature"
+    - "owner": "atomisthq"
+    - "root_package": "com.atomist.rug.kind.gherkin"
+    - "version": "0.1.0-SNAPSHOT"
+

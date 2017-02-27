@@ -1,0 +1,27 @@
+{
+  "name": "@atomisthq/gherkin",
+  "version": "${project.version}",
+  "description": "TypeScript model for Gherkin Rug language extension",
+  "keywords": [
+    "Atomist",
+    "Rug",
+    "Gherkin"
+  ],
+  "author": "Atomist, Inc",
+  "license": "Apache-2.0",
+  "atomist" : {
+    "group": "com.atomist.rug.kind.gherkin",
+    "artifact": "gherkin-rug-extension"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atomisthq/gherkin-rug-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atomisthq/gherkin-rug-extension/issues"
+  },
+  "homepage": "https://github.com/atomisthq/gherkin-rug-extension#readme",
+  "dependencies": {
+    "@atomist/rug": "${rug.version}"
+  }
+}
