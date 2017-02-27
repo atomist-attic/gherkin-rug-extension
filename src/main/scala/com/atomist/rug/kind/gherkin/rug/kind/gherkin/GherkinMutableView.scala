@@ -39,7 +39,6 @@ class GherkinMutableView(
   @ExportFunction(readOnly = true, description = "Returns the name of the Gherkin feature")
   def setFeatureName(@ExportFunctionParameterDescription(name = "name", description = "New name for the feature") name: String): Unit = {
     val result = currentContent.replaceAllLiterally(featureName, name)
-    println(result)
     this._currentContent = result
     this.parsedContent = parser.parse(_currentContent)
   }
