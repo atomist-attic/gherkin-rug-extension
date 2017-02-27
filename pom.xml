@@ -17,7 +17,11 @@
         <rug.version>0.12.0</rug.version>
     </properties>
     <dependencies>
-        
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>4.0.0</version>
+        </dependency>
         <dependency>
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_${scala.binary.version}</artifactId>
