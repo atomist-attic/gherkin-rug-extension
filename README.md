@@ -1,7 +1,6 @@
 # Atomist 'gherkin-rug-extension'
 
 [![Build Status](https://travis-ci.org/atomisthq/gherkin-rug-extension.svg?branch=master)](https://travis-ci.org/atomisthq/gherkin-rug-extension)
-[![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
 Rug Language Extension for Gherkin files
 
